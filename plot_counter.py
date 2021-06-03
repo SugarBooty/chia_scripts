@@ -22,8 +22,8 @@ def retrieve_dates(command) :
     resultSplitByLine = (result[0].decode('utf-8')).split("\n")
     # runs 'format_data' on each element of the list individually and saves the result to another list
     resultDateStr = *map(format_data, resultSplitByLine),
-    # returns the final formated date string
-    return resultDateStr
+    # returns the final formated date string, ommitting the final empty element due to \n
+    return resultDateStr[:-1]
 
 # returns a list of date strings for all the plots on the systems
 # prints how many local, remote, and plots there are in total
